@@ -4,8 +4,8 @@
 // Variables
 /*===========================================*/
 $min-width: 320px;
-$wrapper: 1152;
-$main-content-container: 1057;
+$wrapper: 2000;
+$main-content-container: 950;
 
 // =======================
 // =======================
@@ -80,7 +80,7 @@ html {
 }
 
 // Default font-family
-$fontFamily: "Rubik";
+$fontFamily: "PTSans";
 
 body {
     ul {
@@ -138,6 +138,13 @@ body {
     padding: 1.5rem 2.8rem;
     border-radius: 5px;
     letter-spacing: 0.14em;
+}
+
+%icon-image {
+    object-position: center;
+    width: 1.8rem;
+    height: 1.8rem;
+    object-fit: none;
 }
 
 main {

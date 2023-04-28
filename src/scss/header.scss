@@ -1,5 +1,16 @@
+.background {
+    width: 100%;
+    background-color: $cDark;
+    /* Style for "Rectangle" */
+}
 .header {
+    height: 7.5rem;
+    display: flex;
+    align-items: baseline;
+    // @extend %full-width-flex;
     // .header__menu
+    &__logo {
+    }
 
     &__menu {
         padding: 0 1rem;
@@ -8,6 +19,60 @@
             height: 5rem;
         }
         @extend %header-template;
+    }
+
+    &__link-text {
+        display: inline-block;
+        font-size: 1.4rem;
+        font-weight: 400;
+        font-style: normal;
+        letter-spacing: normal;
+        // line-height: 2.1rem;
+        text-align: left;
+        text-transform: uppercase;
+        letter-spacing: 1.4px;
+        font-family: "PF Din Text Cond Pro";
+        @media (max-width: ($tabletRem*10+px)) {
+            .link__text {
+                font-size: 3.2rem;
+            }
+        }
+        &:link,
+        &:visited {
+            // font-weight: 500;
+            // font-size: 2rem;
+            color: $cHeaderText;
+            transition: color 0.3s;
+        }
+        &:hover,
+        &:active {
+            // font-weight: 500;
+            // font-size: 2rem;
+            color: $cLinkHover;
+        }
+    }
+
+    &__region {
+        height: auto;
+        display: inline-flex;
+        align-items: baseline;
+        flex: 1 0 13.5rem;
+    }
+
+    &__profile {
+        img {
+            @extend %icon-image;
+            object-position: -0.2rem -1.1rem;
+            width: 3.2rem;
+        }
+    }
+}
+
+.region {
+    &__icon {
+        img {
+            @extend %icon-image;
+        }
     }
 }
 .menu {
@@ -104,38 +169,23 @@
     // .menu__link
 
     &__link a {
-        @media (max-width: ($tabletRem*10+px)) {
-            .link__text {
-                font-size: 3.2rem;
-            }
-        }
-        &:link,
-        &:visited {
-            font-weight: 500;
-            font-size: 2rem;
-            color: $cDark;
-            transition: color 0.3s;
-        }
-        &:hover,
-        &:active {
-            font-weight: 500;
-            font-size: 2rem;
-            color: $cPrimary;
-        }
     }
 }
+
 .icon-menu {
 }
 
 // Header menu style template
 %header-template {
-    display: block;
-    position: absolute;
-    top: 3.6rem;
-    right: 4rem;
-    width: 3rem;
-    height: 1.8rem;
-    z-index: 10;
+    @include mq(tablet, max) {
+        display: block;
+        position: relative;
+        top: 3.6rem;
+        right: 4rem;
+        width: 3rem;
+        height: 1.8rem;
+        z-index: 10;
+    }
 }
 
 /*
