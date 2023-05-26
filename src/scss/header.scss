@@ -6,10 +6,12 @@
 .header {
     height: 7.5rem;
     display: flex;
-    align-items: baseline;
+    align-items: center;
     // @extend %full-width-flex;
     // .header__menu
     &__logo {
+        padding: 0 8.2rem 2rem 0;
+        transform: translate(0, 0.2rem);
     }
 
     &__menu {
@@ -54,9 +56,11 @@
 
     &__region {
         height: auto;
-        display: inline-flex;
-        align-items: baseline;
+        display: flex;
+        gap: 1.1rem;
+        align-items: center;
         flex: 1 0 13.5rem;
+        padding: 0 3rem 0 5.2rem;
     }
 
     &__profile {
@@ -65,16 +69,70 @@
             object-position: -0.2rem -1.1rem;
             width: 3.2rem;
         }
+
+        &__menu {
+        }
     }
 }
 
 .region {
     &__icon {
+        height: 1.8rem;
         img {
             @extend %icon-image;
+            object-fit: cover;
+            // align-self: center;
         }
     }
 }
+
+.profile {
+    position: relative;
+    &__link-text {
+        &:link,
+        &:visited {
+            color: $cHeaderText;
+            transition: color 0.3s;
+        }
+        &:hover,
+        &:active {
+            cursor: pointer;
+            color: $cLinkHover;
+        }
+    }
+
+    &__menu {
+        width: 17.6rem;
+        height: 12.5rem;
+        padding: 2.5rem;
+        padding-top: 0.8rem;
+        bottom: -15.5rem;
+    }
+}
+
+.profile-menu {
+    position: absolute;
+    display: flex;
+    gap: 0.8rem;
+    align-items: flex-start;
+    flex-direction: column;
+
+    background-color: $cDark;
+    z-index: 50;
+    &__link {
+        img {
+            @extend %icon-image;
+            width: 1.7rem;
+            height: 1.7rem;
+            object-fit: contain;
+            object-position: 0rem 0rem;
+        }
+        display: flex;
+        align-items: center;
+        gap: 1.3rem;
+    }
+}
+
 .menu {
     // .menu__icon
 
