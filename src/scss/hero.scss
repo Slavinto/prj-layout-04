@@ -1,0 +1,140 @@
+.hero {
+    height: 50rem;
+    text-align: center;
+    &__background-image {
+        position: absolute;
+        left: 0;
+        width: 100vw;
+        height: 50rem;
+        z-index: -1;
+    }
+    // .hero__main-article
+
+    &__main-article {
+    }
+
+    // .hero__info
+
+    &__info {
+        padding-top: 3.5rem;
+    }
+
+    // .hero__heading
+
+    &__heading {
+        color: #ffffff;
+    }
+
+    // .hero__description
+
+    &__description {
+        width: 68.8rem;
+    }
+
+    // .hero__join
+
+    &__join {
+        width: 25rem;
+        height: 5rem;
+        border: 3px solid #bb9c66;
+    }
+
+    // .hero__pagination
+
+    &__pagination {
+    }
+}
+.main-article {
+    display: flex;
+    flex-direction: column;
+    gap: 2.3rem;
+}
+.article-info {
+    color: $cLinkHover;
+    font-family: $fCerem;
+    font-size: 4rem;
+    line-height: 2.5rem;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: normal;
+}
+.heading {
+    padding-top: 0.4rem;
+    font-family: $fPf;
+    font-size: 3.5rem;
+    font-weight: 400;
+    line-height: 3.5rem;
+    text-transform: uppercase;
+    font-style: normal;
+    letter-spacing: 0.525rem;
+    line-height: normal;
+}
+.description {
+    color: #ffffff;
+    font-family: "PT Sans";
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 2.5rem;
+    font-style: normal;
+    letter-spacing: normal;
+}
+.cta {
+    margin: 3.5rem auto 9.8rem auto;
+
+    position: relative;
+    &__grad {
+        position: absolute;
+        z-index: -1;
+        width: 25rem;
+        height: 50%;
+        background-image: linear-gradient(
+            to top,
+            #bb9c66 0%,
+            rgba(187, 156, 102, 0) 100%
+        );
+
+        opacity: 0.06;
+    }
+    &__link {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:link,
+        &:visited {
+            color: #ffffff;
+            font-family: $fPf;
+            font-size: 1.5rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            font-style: normal;
+            letter-spacing: 1.5px;
+            line-height: normal;
+        }
+        &:hover,
+        &:active {
+        }
+    }
+}
+.hero-pagination {
+    background-color: #fff;
+    width: 10rem;
+    height: 10rem;
+    transform: rotate(45deg);
+    // .hero-pagination__arrow
+
+    &__arrow {
+    }
+
+    // .hero-pagination__spinner
+
+    &__spinner {
+        img {
+            width: 2.6rem;
+            height: 2.6rem;
+        }
+        color: $cLinkHover;
+        margin: 0 auto;
+    }
+}
