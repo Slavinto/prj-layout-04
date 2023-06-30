@@ -1,3 +1,7 @@
+@use "maps";
+
+$bps: maps.$breakpoints;
+
 // To quickly centre a block element without having to worry about if there is any top or bottom margin already applied.
 
 @mixin push--auto {
@@ -7,8 +11,8 @@
     }
 }
 
-// center a block vertically
 @mixin vertical-center {
+    // center a block vertically
     position: relative;
     top: 50%;
     -ms-transform: translateY(-50%);
@@ -16,9 +20,48 @@
     transform: translateY(-50%);
 }
 
+@mixin aspect-ratio($width, $height) {
+    // html pattern for this mixin
+    //     <div class="image">
+    //     <div class="img-wrapper">
+    //       <img src="https://loremflickr.com/1800/675/people">
+    //     </div>
+    //   </div>
+    max-height: #{$height}rem;
+    overflow: hidden;
+    div[class*="img-wrapper"] {
+        padding-top: percentage(calc($height / $width));
+        position: relative;
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            max-height: #{$height}rem;
+            // max-width: #{$width}rem;
+        }
+    }
+}
+.image {
+    @include aspect-ratio(100, 100);
+}
+
+@mixin bg-image($height, $bg-path) {
+    position: relative;
+    min-width: 100vw;
+    height: ($height) + rem;
+    background-size: cover;
+    background-position: 50% 50%;
+
+    background-image: url($bg-path);
+}
+
 // A massive time saver! You can just use pixel values but we have some default breakpoints setup that work too, another time saver while keeping your breakpoints consistent.
 
-// $breakpoints: (
+// $bps: (
 //     "phone": 400px,
 //     "phone-wide": 480px,
 //     "phablet": 560px,
@@ -29,12 +72,46 @@
 //     "desktop-wide": 1440px,
 // );
 
+@mixin spinner($color, $size, $thickness) {
+    // html structure
+    // <div class="spinner">
+    //     <div class="loader"></div>
+    // </div>
+    margin: 0;
+    display: grid;
+    place-content: center;
+    .loader {
+        width: $size + rem; /* the size */
+        padding: $thickness + rem; /* the border thickness */
+        background: $color; /* the color */
+
+        aspect-ratio: 1;
+        border-radius: 50%;
+        --_m: conic-gradient(#0000, #000), linear-gradient(#000 0 0) content-box;
+        -webkit-mask: var(--_m);
+        mask: var(--_m);
+        -webkit-mask-composite: source-out;
+        mask-composite: subtract;
+        box-sizing: border-box;
+        animation: load 1s linear infinite;
+    }
+    @keyframes load {
+        to {
+            transform: rotate(1turn);
+        }
+    }
+}
+
 @mixin mq($width, $type: min) {
-    @if map_has_key($breakpoints, $width) {
-        $width: calc(map_get($breakpoints, $width));
+    @if map_has_key($bps, $width) {
+        $width: calc(map_get($bps, $width));
         @if $type == max {
             $width: $width - 1px;
         }
+        @media only screen and (#{$type}-width: $width) {
+            @content;
+        }
+    } @else {
         @media only screen and (#{$type}-width: $width) {
             @content;
         }
@@ -48,11 +125,17 @@
     text-overflow: ellipsis;
 }
 
-@mixin create-responsive-image($curwidth: 32) {
+@mixin center-absolute() {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin create-responsive-image($width: 10, $height: 10) {
     // $curwidth - original mobile width
 
     // 1st breakpoint divided by initial mobile-first size
-    $ratio: calc($phoneRem / $curwidth);
 
     width: $curwidth + rem;
     height: 100%;
@@ -61,23 +144,27 @@
 
     @include mq(phone) {
         //400px
-        min-width: calc($curwidth * $ratio) + rem;
+        min-width: calc($curwidth) + rem;
     }
     @include mq(phone-wide) {
         //480px
-        min-width: calc($phoneRem * $ratio) + rem;
+        $width: calc(map-get($bps, phone));
+        min-width: calc($width / 10) + rem;
     }
     @include mq(phablet) {
         //560px
-        min-width: calc($phone-wideRem * $ratio) + rem;
+        $width: calc(map_get($bps, phone-wide));
+        min-width: calc($width / 10) + rem;
     }
     @include mq(tablet-small) {
         //640px
-        min-width: $phabletRem + rem;
+        $width: calc(map_get($bps, phablet));
+        min-width: calc($width / 10) + rem;
     }
     @include mq(tablet) {
         //768px
-        min-width: $tablet-smallRem + rem;
+        $width: calc(map_get($bps, tablet));
+        min-width: calc($width / 10) + rem;
     }
     /*
     @include mq(tablet-wide) {

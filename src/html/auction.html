@@ -1,0 +1,55 @@
+<section class="auction">
+    <article class="auction__main-article main-article">
+        <p class="auction__info article-info">Популярные</p>
+        <h2 class="auction__heading heading _dark">лоты под аукцион</h2>
+        <div class="auction__divider-wide div-wide">
+            <div class="div-wide__left">
+                <img
+                    src="@img/auction/divider-horizontal.svg"
+                    alt="horizontal divider part"
+                />
+            </div>
+            <div class="div-wide__wide">
+                <img
+                    src="@img/auction/watchIcon.svg"
+                    alt="horizontal divider part"
+                />
+            </div>
+            <div class="div-wide__right">
+                <img
+                    src="@img/auction/divider-horizontal.svg"
+                    alt="horizontal divider part"
+                />
+            </div>
+        </div>
+
+        @@include('auction-lots.html', {})
+        <div class="auction__catalogue catalogue">
+            <div class="catalogue__divider div-thin">
+                <div class="div-thin__arrow img-wrapper">
+                    <img
+                        src="@img/auction/arrow.svg"
+                        alt="horizontal divider"
+                    />
+                    <div class="div-thin__circle">
+                        <img
+                            src="@img/auction/lots-circle.svg"
+                            alt="horizontal divider part"
+                        />
+                        <p class="div-thin__text">все&nbsp;лоты</p>
+                    </div>
+                </div>
+            </div>
+            @@include('auction-categories.html', {})
+        </div>
+
+        <div class="auction__description description">
+            <div class="description__pattern">
+                <img src="@img/auction/pattern.svg" alt="pattern" />
+            </div>
+            <p class="description__text _dark">
+                @@include('auction-description-text.html',{})
+            </p>
+        </div>
+    </article>
+</section>

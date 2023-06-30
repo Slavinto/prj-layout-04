@@ -1,0 +1,169 @@
+@forward "auction-lots";
+@forward "auction-categories";
+
+@use "defaults" as d;
+
+.auction {
+    max-width: 101rem;
+    // margin: 0 auto;
+    // .auction__main-article
+
+    &__main-article {
+    }
+
+    // .auction__info
+
+    &__info {
+        padding-top: 8.5rem;
+    }
+
+    // .auction__heading
+
+    &__heading {
+    }
+
+    // .auction__divider-wide
+
+    &__divider-wide {
+    }
+
+    // .auction__catalogue
+
+    &__catalogue {
+        display: flex;
+        flex-direction: column;
+    }
+
+    // .auction__description
+
+    &__description {
+    }
+}
+.container-lg {
+}
+.main-article {
+}
+.article-info {
+}
+.heading {
+}
+// ._dark
+
+._dark {
+}
+
+.div-wide {
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+
+    @include d.mq(tablet-wide, max) {
+        //1024px
+        gap: 2rem;
+        transform: scale(0.92);
+    }
+    @include d.mq(tablet, max) {
+        //768px
+        transform: scale(0.7);
+    }
+    @include d.mq(tablet-small, max) {
+        //640px
+        transform: scale(0.55);
+    }
+    @include d.mq(phablet, max) {
+        //560px
+        transform: scale(0.45);
+    }
+    @include d.mq(phone-wide, max) {
+        //480px
+        transform: scale(0.3);
+    }
+    @include d.mq(phone, max) {
+        //400px
+    }
+
+    // .div-wide__left
+
+    &__left {
+        transform: rotate(180deg);
+    }
+
+    // .div-wide__wide
+
+    &__wide {
+    }
+
+    // .div-wide__right
+
+    &__right {
+    }
+}
+.catalogue {
+    width: 100%;
+    // .catalogue__divider
+
+    &__divider {
+        width: 40rem;
+        margin: 0 auto;
+    }
+}
+.div-thin {
+    position: relative;
+    // .div-thin__arrow
+
+    &__arrow {
+        display: flex;
+        justify-content: center;
+        // @include d.aspect-ratio(40, 10);
+        // width: 40rem;
+        img {
+            @include d.mq(tablet-wide, max) {
+                //1024px
+                transform: scale(0.9);
+            }
+            @include d.mq(tablet, max) {
+                //768px
+                transform: scale(0.7);
+            }
+        }
+    }
+
+    // .div-thin__circle
+
+    &__circle {
+        @include d.center-absolute;
+        p {
+            @include d.mq(tablet, max) {
+                //768px
+                font-size: 1.8rem;
+            }
+        }
+    }
+
+    // .div-thin__text
+
+    &__text {
+        @include d.center-absolute;
+        color: d.$dark;
+        font-family: d.$fPf;
+        font-size: 2.1rem;
+        font-weight: 500;
+        text-align: center;
+        text-transform: uppercase;
+        font-style: normal;
+        letter-spacing: normal;
+        line-height: normal;
+    }
+}
+
+.description {
+    // .description__pattern
+
+    &__pattern {
+    }
+
+    // .description__text
+
+    &__text {
+    }
+}

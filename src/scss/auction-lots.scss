@@ -1,0 +1,265 @@
+@use "defaults" as d;
+
+p,
+figure {
+    margin: 0 !important;
+}
+
+$cardMaxWidth: 25.2rem;
+
+%card-text {
+    color: d.$dark;
+    font-family: "PT Sans";
+    font-size: 1.4rem;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: 1.9rem;
+    text-align: center;
+}
+
+._stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 5rem;
+}
+
+.auction {
+    // .auction__lots
+
+    &__lots {
+    }
+}
+.lots {
+    display: flex;
+    gap: 10rem;
+    padding: 2rem 0rem 5rem 0rem;
+    @include d.mq(tablet, max) {
+        flex-wrap: wrap;
+        gap: 3rem;
+        justify-content: space-around;
+    }
+    // .lots__card
+
+    &__card {
+        max-width: $cardMaxWidth;
+        height: 52.5rem;
+    }
+}
+
+.lot {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    // .image-container
+
+    &__image-container {
+        flex: 1 0 $cardMaxWidth;
+        width: $cardMaxWidth;
+        height: $cardMaxWidth;
+        position: relative;
+        border: 3px solid d.$linkHover;
+        @include d.aspect-ratio(25.2, 25.2);
+    }
+
+    // .lot__image
+    &__image {
+    }
+
+    // .lot__timer
+
+    &__timer {
+        background-color: d.$headerText;
+        position: absolute;
+        top: 18.2rem;
+        left: 50%;
+        display: flex;
+        z-index: 1;
+    }
+
+    // .lot__name-container
+
+    &__name-container {
+        width: 25rem;
+        height: 10rem;
+    }
+
+    // .lot__name
+
+    &__name {
+        padding: 3rem 0;
+        position: relative;
+        z-index: 1;
+        color: d.$dark;
+        font-family: d.$fPf;
+        font-size: 2.1rem;
+        font-weight: 500;
+        font-style: normal;
+        letter-spacing: normal;
+        line-height: 2.5rem;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    // .lot__bid-info
+
+    &__bid-info {
+    }
+}
+.timer {
+    // .timer__icon
+    &__icon {
+        position: absolute;
+        top: 0.5rem;
+        left: 0.7rem;
+        transform: rotate(-45deg);
+    }
+
+    // .timer__text
+
+    &__text {
+        position: absolute;
+        top: 2rem;
+        left: -0.3rem;
+        transform: rotate(-45deg);
+        color: d.$dark;
+        font-family: "PT Sans Narrow";
+        font-size: 1.8rem;
+        font-weight: 400;
+        font-style: normal;
+        letter-spacing: normal;
+        line-height: 2.1rem;
+        text-align: center;
+    }
+}
+// ================================================================
+
+.lot {
+    // .lot__bid-info
+
+    &__bid-info {
+        display: flex;
+        position: relative;
+        gap: 0.7rem;
+    }
+}
+.bid-info {
+    // .bid-info__views
+
+    &__views {
+    }
+
+    // .bid-info__icon
+
+    &__icon {
+    }
+
+    // .bid-info__text-wrapper
+
+    &__text-wrapper {
+        align-self: stretch;
+        border-bottom: 1px d.$linkHover solid;
+    }
+
+    // .bid-info__text
+
+    &__text {
+        @extend %card-text;
+        margin-bottom: 0.3rem;
+    }
+
+    // .bid-info__bid
+
+    &__bid {
+        width: 13.5rem;
+        padding-top: 1.1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    // .bid-info__bid-price
+
+    &__bid-price {
+        align-self: center !important;
+        color: d.$dark;
+        font-family: "Bravo RG";
+        font-size: 5rem;
+        font-weight: 400;
+        font-style: normal;
+        letter-spacing: normal;
+        line-height: 5rem;
+        text-align: center;
+        align-self: baseline;
+    }
+
+    // .bid-info__currency
+
+    &__currency {
+        font-family: "ALS Rubl";
+        font-size: 1.4rem;
+        font-style: normal;
+        letter-spacing: normal;
+        line-height: normal;
+    }
+
+    // .bid-info__bids
+
+    &__bids {
+    }
+
+    // .bid-info__pattern
+
+    &__pattern {
+        position: absolute;
+        z-index: -1;
+        @include d.center-absolute();
+    }
+}
+
+// ================================================================
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// display: grid;
+// grid-template-columns: 57fr 135fr 57fr;
+
+.hero {
+    // .hero__join
+
+    &__join {
+    }
+}
+.cta {
+    // .cta__grad
+
+    &__grad {
+    }
+
+    // .cta__link
+
+    &__link {
+    }
+}
+._cta-card {
+    margin-top: 2.8rem;
+
+    &__text {
+        &:link,
+        &:visited {
+            color: d.$dark;
+            font-family: d.$fPf;
+            font-size: 2.1rem;
+            font-weight: 500;
+            text-align: center;
+            text-transform: uppercase;
+            font-style: normal;
+            letter-spacing: normal;
+            line-height: normal;
+        }
+        &:hover,
+        &:active {
+        }
+    }
+}

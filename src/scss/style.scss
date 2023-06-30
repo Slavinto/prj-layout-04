@@ -1,2 +1,8 @@
-@import "defaults", "gallery", "header", "home", "hero", "footer";
-// Variables
+@forward "gallery";
+@forward "header";
+@forward "home";
+@forward "hero";
+@forward "auction";
+@forward "footer";
+
+// "../../node_modules/bootstrap/scss/bootstrap",

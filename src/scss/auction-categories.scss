@@ -1,0 +1,156 @@
+@use "defaults" as d;
+@use "auction-lots" as a-l;
+
+.auction-categories {
+    display: flex;
+    flex-direction: column;
+    padding-top: 12rem;
+    gap: 2rem;
+    &__top {
+        display: grid;
+        grid-template-columns: 25fr 10fr 25fr 10fr 25fr;
+        justify-items: center;
+    }
+
+    // &:first-child {
+    //     grid-template-columns: 50%;
+    // }
+    // &:nth-child(2) {
+    //     grid-template-columns: 50%;
+    // }
+}
+.categories {
+    display: grid;
+    grid-template-columns: 25fr 10fr 25fr 10fr 25fr;
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+    row-gap: 2rem;
+    // .categories__category
+
+    &__category {
+    }
+
+    // .categories__pattern-vertical
+
+    &__pattern-vertical {
+    }
+}
+.category {
+    // .category__background
+
+    &__background {
+        // object-position: 50% 50%;
+        // object-fit: contain;
+        @extend ._adaptive;
+    }
+
+    // .category__container
+
+    &__container {
+        border-radius: 50%;
+        position: relative;
+        max-width: 25rem;
+        max-height: 25rem;
+    }
+
+    // .category__info
+
+    &__info {
+        @include d.center-absolute();
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
+    }
+
+    // .category__icon
+
+    &__icon {
+        img {
+            max-width: 7.5rem;
+        }
+    }
+
+    // .category__overlay
+
+    &__overlay {
+        @extend %overlay;
+
+        border-radius: 50%;
+        background-color: d.$darkOverlay2;
+    }
+
+    // .category__title
+
+    &__title {
+        @extend .lot__name;
+        color: d.$headerText;
+        padding: 0rem;
+    }
+
+    // .category__underline
+
+    &__underline {
+        padding-top: 1.6rem;
+    }
+}
+.underline {
+}
+._left {
+    grid-column: 2/3;
+}
+
+._right {
+    grid-column: 4/5;
+}
+
+.p-v {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    // .p-v__rectangle-container
+
+    &__rectangle-container {
+    }
+
+    // .p-v__rectangle
+
+    &__rectangle {
+        width: 2rem;
+        height: 2rem;
+        border: 1px solid d.$linkHover;
+        transform: rotate(45deg);
+    }
+
+    // .p-v__v-line
+
+    &__v-line {
+        position: relative;
+        width: 1px !important;
+        height: 25rem;
+        background-color: d.$linkHover;
+    }
+
+    // .p-v__circle
+
+    &__circle {
+        @include d.center-absolute;
+        background-color: d.$linkHover;
+        width: 1rem;
+        height: 1rem;
+        outline: 1rem solid #fff;
+        border-radius: 50%;
+    }
+
+    // .p-v__circle-single
+
+    &__circle-single {
+        background-color: d.$linkHover;
+        width: 1rem;
+        height: 1rem;
+        outline: 1rem solid #fff;
+        border-radius: 50%;
+    }
+}

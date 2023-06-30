@@ -1,0 +1,35 @@
+<div id="carouselExampleCaptions" class="carousel slide">
+    <div class="carousel-inner">
+        <div class="carousel-item active">@@include('./hero.html', {})</div>
+        <div class="carousel-item">@@include('./hero.html', {})</div>
+        <div class="carousel-item">@@include('./hero.html', {})</div>
+    </div>
+
+    <div class="hero__pagination hero-pagination">
+        <button
+            class="carousel-control-prev hero-pagination__arrow-left"
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="prev"
+        >
+            <img
+                src="@img/hero/chevron-left.svg"
+                alt="pagination navigation left-arrow"
+            />
+        </button>
+        <div class="hero-pagination__spinner">
+            <div class="loader"></div>
+        </div>
+        <button
+            class="carousel-control-next hero-pagination__arrow-right"
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="next"
+        >
+            <img
+                src="@img/hero/chevron-right.svg"
+                alt="pagination navigation right-arrow"
+            />
+        </button>
+    </div>
+</div>
