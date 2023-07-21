@@ -41,15 +41,15 @@
                 </div>
             </div>
             @@include('auction-categories.html', {})
-        </div>
 
-        <div class="auction__description description">
-            <div class="description__pattern">
-                <img src="@img/auction/pattern.svg" alt="pattern" />
+            <div class="auction__description description">
+                <div class="description__pattern">
+                    <img src="@img/auction/pattern.svg" alt="pattern" />
+                </div>
+                <p class="description__text _dark">
+                    @@include('auction-description-text.html',{})
+                </p>
             </div>
-            <p class="description__text _dark">
-                @@include('auction-description-text.html',{})
-            </p>
         </div>
     </article>
 </section>

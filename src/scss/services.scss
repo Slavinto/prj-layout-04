@@ -1,0 +1,84 @@
+.services {
+    // .services__container
+
+    &__container {
+        @extend ._container;
+    }
+
+    // .services__header
+
+    &__header {
+    }
+
+    // .services__articles
+
+    &__articles {
+    }
+
+    // .services__article
+
+    &__article {
+    }
+}
+.container-fluid {
+}
+
+// ._centered
+
+._centered {
+}
+
+.auction {
+    // .auction__info
+
+    &__info {
+    }
+
+    // .auction__heading
+
+    &__heading {
+    }
+
+    // .auction__divider-wide
+
+    &__divider-wide {
+    }
+}
+.article-info {
+}
+.heading {
+}
+.div-wide {
+    // .div-wide__left
+
+    &__left {
+    }
+
+    // .div-wide__wide
+
+    &__wide {
+    }
+
+    // .div-wide__right
+
+    &__right {
+    }
+}
+.expert {
+}
+.category {
+    // .category__title
+
+    &__title {
+    }
+}
+.description {
+    // .description__text
+
+    &__text {
+    }
+}
+.order {
+}
+.repair {
+}

@@ -37,6 +37,21 @@
     // .auction__description
 
     &__description {
+        display: flex;
+        gap: 4.5rem;
+        align-items: center;
+        padding: 0 7rem;
+
+        @include d.mq(tablet-wide, max) {
+            padding: 0 10rem;
+        }
+        @include d.mq(tablet-small, max) {
+            flex-direction: column;
+            padding: 0 20rem;
+        }
+        @include d.mq(phone-wide, max) {
+            padding: 0 31rem;
+        }
     }
 }
 .container-lg {
@@ -160,10 +175,29 @@
     // .description__pattern
 
     &__pattern {
+        max-width: 8.6rem;
+
+        @include d.mq(tablet-wide, max) {
+            scale: 0.87;
+        }
+        @include d.mq(tablet, max) {
+            scale: 0.77;
+        }
+        @include d.mq(tablet-small, max) {
+            display: none;
+        }
     }
 
     // .description__text
 
     &__text {
+        color: #333333 !important;
+        font-family: "PT Sans";
+        font-size: 1.5rem;
+        font-weight: 400;
+        line-height: 2.5rem;
+        text-align: left;
+        font-style: normal;
+        letter-spacing: normal;
     }
 }

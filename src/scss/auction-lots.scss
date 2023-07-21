@@ -32,13 +32,23 @@ $cardMaxWidth: 25.2rem;
     }
 }
 .lots {
-    display: flex;
-    gap: 10rem;
-    padding: 2rem 0rem 5rem 0rem;
-    @include d.mq(tablet, max) {
-        flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 10rem;
+    padding: 2rem 0rem 10rem 0rem;
+
+    @include d.mq(tablet-wide, max) {
+        column-gap: 5rem;
+    }
+    @include d.mq(tablet-small, max) {
+        grid-template-columns: 1fr 1fr;
+        gap: 10rem;
+    }
+    @include d.mq(phone-wide, max) {
+        display: flex;
         gap: 3rem;
-        justify-content: space-around;
+        flex-direction: column;
+        // justify-content: space-around;
     }
     // .lots__card
 
@@ -54,6 +64,11 @@ $cardMaxWidth: 25.2rem;
     justify-content: space-between;
     align-items: center;
     position: relative;
+
+    @include d.mq(phone-wide, max) {
+        box-shadow: 1px 1px 5px -2px d.$mainOverlay;
+        width: calc($cardMaxWidth + 5rem);
+    }
     // .image-container
 
     &__image-container {
