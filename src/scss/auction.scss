@@ -2,6 +2,7 @@
 @forward "auction-categories";
 
 @use "defaults" as d;
+@use "patterns" as p;
 
 .auction {
     max-width: 101rem;
@@ -41,17 +42,6 @@
         gap: 4.5rem;
         align-items: center;
         padding: 0 7rem;
-
-        @include d.mq(tablet-wide, max) {
-            padding: 0 10rem;
-        }
-        @include d.mq(tablet-small, max) {
-            flex-direction: column;
-            padding: 0 20rem;
-        }
-        @include d.mq(phone-wide, max) {
-            padding: 0 31rem;
-        }
     }
 }
 .container-lg {
@@ -68,50 +58,7 @@
 }
 
 .div-wide {
-    display: flex;
-    align-items: center;
-    gap: 5rem;
-
-    @include d.mq(tablet-wide, max) {
-        //1024px
-        gap: 2rem;
-        transform: scale(0.92);
-    }
-    @include d.mq(tablet, max) {
-        //768px
-        transform: scale(0.7);
-    }
-    @include d.mq(tablet-small, max) {
-        //640px
-        transform: scale(0.55);
-    }
-    @include d.mq(phablet, max) {
-        //560px
-        transform: scale(0.45);
-    }
-    @include d.mq(phone-wide, max) {
-        //480px
-        transform: scale(0.3);
-    }
-    @include d.mq(phone, max) {
-        //400px
-    }
-
-    // .div-wide__left
-
-    &__left {
-        transform: rotate(180deg);
-    }
-
-    // .div-wide__wide
-
-    &__wide {
-    }
-
-    // .div-wide__right
-
-    &__right {
-    }
+    @extend %separator;
 }
 .catalogue {
     width: 100%;
