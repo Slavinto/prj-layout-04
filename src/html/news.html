@@ -18,24 +18,6 @@
             <div class="s-p__square-md"></div>
         </div>
     </div>
-
-    <!-- <div class="auction__divider-wide div-wide">
-        <div class="div-wide__left">
-            <img
-                src="@img/auction/divider-horizontal.svg"
-                alt="horizontal divider part"
-            />
-        </div>
-        <div class="div-wide__wide">
-            <img src="@img/news/quotes.png" alt="horizontal divider part" />
-        </div>
-        <div class="div-wide__right">
-            <img
-                src="@img/auction/divider-horizontal.svg"
-                alt="horizontal divider part"
-            />
-        </div>
-    </div> -->
     <figure class="quote d-flex align-items-center">
         <div class="quote__image">
             <img src="@img/news/MT.png" alt="Mark Twain" />
@@ -51,7 +33,7 @@
     <div class="news__reset-divider">
         <img src="@img/news/refresh-div.png" alt="refresh icon" />
     </div>
-    <article class="news__events d-flex events flex-wrap">
+    <article class="news__events events">
         <div class="events__news-articles news-articles d-flex flex-column">
             <div class="news-articles__header d-flex align-items-center">
                 <div class="news-articles__image">
@@ -118,7 +100,7 @@
                 </p>
             </div>
         </div>
-        <div class="events__subscribe subscribe d-flex">
+        <div class="events__subscribe flex-column subscribe d-flex">
             <div class="news-articles__header d-flex align-items-center">
                 <div class="news-articles__image">
                     <img
@@ -132,22 +114,23 @@
                 Для получения уведомлений о новых предложениях, введите адрес
                 своей электронной почты
             </p>
-            <div class="subscribe__form s-form d-flex align-items-center">
+        </div>
+        <div class="s-form-container">
+            <div class="s-form">
                 <input
                     class="subscribe__field"
                     type="email"
-                    size="30"
                     required
                     placeholder="Ваш E-mail"
                 />
                 <div class="s-form__sep"></div>
-                <div class="s-form__btn d-flex align-items-center">
+                <button class="s-form__btn d-flex align-items-center">
                     <p class="s-form__btn-text">OK</p>
                     <img
                         src="@img/news/dbl-arrow-icon.svg"
                         alt="double arrow icon"
                     />
-                </div>
+                </button>
             </div>
         </div>
     </article>

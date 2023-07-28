@@ -1,19 +1,142 @@
-footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+@use "defaults" as d;
 
-.footer-icons {
-    display: flex;
-    gap: 3.5rem;
-    padding-bottom: 2.6rem;
-}
+.footer {
+    width: 100%;
+    min-height: 17.8rem;
+    background-color: d.$dark;
 
-.footer-rights {
-    text-align: center;
-    font-weight: 400;
-    font-size: 1.4rem;
-    line-height: 2.1rem;
-    padding-bottom: 5.4rem;
+    // .footer__container
+
+    &__container {
+        max-width: 95rem;
+        display: flex;
+        gap: 3rem;
+        padding: 5rem 0;
+    }
+
+    // .footer__logo
+
+    &__logo {
+        display: flex;
+        gap: 2.7rem;
+        flex-direction: column;
+        align-items: center;
+
+        .header__logo {
+            img {
+                max-width: 17.1rem;
+                height: 4.1rem;
+                object-fit: contain;
+            }
+        }
+    }
+
+    // .footer__copyright
+
+    &__copyright {
+        color: #bb9c66;
+        font-size: 1.3rem;
+        line-height: 1;
+    }
+
+    // .footer__menu
+
+    &__menu {
+        padding: 0;
+        padding-top: 0.3rem;
+
+        flex: 1 1 auto;
+        display: flex;
+        align-content: flex-start;
+        flex-wrap: wrap;
+        max-width: 49rem;
+        column-gap: 2rem;
+        row-gap: 1rem;
+    }
+
+    // .footer__contacts
+
+    &__contacts {
+    }
+}
+.header {
+    // .header__logo
+
+    &__logo {
+        padding: 0;
+    }
+
+    // .header__link-text
+
+    &__link-text {
+    }
+}
+.f-menu {
+    // .f-menu__item
+
+    &__item {
+    }
+}
+.m-i {
+    // .m-i__link
+
+    &__link {
+        line-height: 1;
+    }
+}
+.f-c {
+    color: d.$linkHover;
+    margin-left: auto;
+
+    // .f-c__phone
+
+    &__phone {
+        margin: 0;
+        display: flex;
+        align-items: flex-start;
+    }
+
+    // .f-c__country-prefix
+
+    &__country-prefix {
+        position: relative;
+        span {
+            position: absolute;
+            left: -0.8rem;
+            top: 0.3rem;
+            font-size: 1.4rem;
+            padding-bottom: 0.3rem;
+        }
+
+        font-size: 2.2rem;
+        line-height: 1;
+    }
+
+    // .f-c__phone-number
+
+    &__phone-number {
+        line-height: 1;
+        flex: 0 1 auto;
+        font-family: "Bravo RG";
+        font-size: 5rem;
+    }
+
+    // .f-c__link
+
+    &__link {
+        flex: 1 0 100%;
+        display: flex;
+        gap: 0.3rem;
+        justify-content: flex-end;
+    }
+
+    // .f-c__link-icon
+
+    &__link-icon {
+    }
+
+    // .f-c__link-text
+
+    &__link-text {
+    }
 }
