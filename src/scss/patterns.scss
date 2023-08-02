@@ -34,44 +34,49 @@
     align-items: center;
     width: 100%;
 
-    // .s-p__line
+    // horizontal line pattern
 
-    &__line {
-        flex: 0 1 100%;
+    &::before {
+        content: "";
+        width: 100%;
         background-color: d.$linkHover;
         height: 1px;
     }
 
-    // .s-p__circle
+    // medium sized square pattern
 
-    &__circle {
-        margin-left: 1rem;
-        flex: 1 0 auto;
-        @extend %pattern-border;
-        border-radius: 50%;
-        width: 1rem;
-        height: 1rem;
-    }
-
-    // .s-p__square-sm
-
-    &__square-sm {
-        margin: 0 1rem;
-        flex: 1 0 auto;
-        @extend %pattern-border;
-        width: 1.5rem;
-        height: 1.5rem;
-        transform: rotate(45deg);
-    }
-
-    // .s-p__square-md
-
-    &__square-md {
+    &::after {
+        content: "";
         margin: 0 0.5rem;
         flex: 1 0 auto;
         @extend %pattern-border;
         width: 2.5rem;
         height: 2.5rem;
         transform: rotate(45deg);
+    }
+
+    span {
+        display: flex;
+        align-items: center;
+
+        &::before {
+            content: "";
+            margin-left: 1rem;
+            flex: 1 0 auto;
+            @extend %pattern-border;
+            border-radius: 50%;
+            width: 1rem;
+            height: 1rem;
+        }
+
+        &::after {
+            content: "";
+            margin: 0 1rem;
+            flex: 1 0 auto;
+            @extend %pattern-border;
+            width: 1.5rem;
+            height: 1.5rem;
+            transform: rotate(45deg);
+        }
     }
 }
